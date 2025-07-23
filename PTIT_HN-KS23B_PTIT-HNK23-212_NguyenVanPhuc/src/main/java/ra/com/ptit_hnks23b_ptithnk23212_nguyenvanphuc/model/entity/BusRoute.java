@@ -1,5 +1,6 @@
-package ra.com.ptit_hnks23b_ptithnk23212_nguyenvanphuc.modul.entity;
+package ra.com.ptit_hnks23b_ptithnk23212_nguyenvanphuc.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,6 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BusRoute {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "bus_route_id")
@@ -31,7 +33,8 @@ public class BusRoute {
     @Column(name = "status", nullable = false)
     private Boolean status;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "bus_id", nullable = false)
-    private Bus buses;
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    private Bus bus;
 }

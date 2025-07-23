@@ -1,4 +1,4 @@
-package ra.com.ptit_hnks23b_ptithnk23212_nguyenvanphuc.modul.dto.request;
+package ra.com.ptit_hnks23b_ptithnk23212_nguyenvanphuc.model.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

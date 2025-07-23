@@ -1,4 +1,4 @@
-package ra.com.ptit_hnks23b_ptithnk23212_nguyenvanphuc.modul.dto;
+package ra.com.ptit_hnks23b_ptithnk23212_nguyenvanphuc.model.dto;
 
 import lombok.Data;
 

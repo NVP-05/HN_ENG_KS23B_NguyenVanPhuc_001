@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import ra.com.ptit_hnks23b_ptithnk23212_nguyenvanphuc.modul.dto.respone.ApiResponse;
+import ra.com.ptit_hnks23b_ptithnk23212_nguyenvanphuc.model.dto.respone.ApiResponse;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {

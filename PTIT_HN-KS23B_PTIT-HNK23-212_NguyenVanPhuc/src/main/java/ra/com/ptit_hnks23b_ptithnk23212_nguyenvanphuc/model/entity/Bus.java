@@ -1,5 +1,6 @@
-package ra.com.ptit_hnks23b_ptithnk23212_nguyenvanphuc.modul.entity;
+package ra.com.ptit_hnks23b_ptithnk23212_nguyenvanphuc.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,27 +14,30 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Bus {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "bus_id")
     private Integer busId;
 
-    @Column(name = "bus_name", unique = true, nullable = false, length = 100)
+    @Column(name = "bus_name", nullable = false, unique = true, length = 100)
     private String busName;
 
-    @Column(name = "registration_number", unique = true, nullable = false, length = 30)
+    @Column(name = "registration_number", nullable = false, unique = true, length = 30)
     private String registrationNumber;
 
     @Column(name = "total_seats", nullable = false)
     private Integer totalSeats;
 
-    @Column(name = "image_bus")
+    @Column(name = "image_bus", length = 255)
     private String imageBus;
 
     @Column(name = "status", nullable = false, columnDefinition = "bit default 1")
-    private Boolean status = true;
+    private Boolean status;
 
-    @OneToMany(mappedBy = "buses", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "bus", fetch = FetchType.LAZY)
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private List<BusRoute> busRoutes;
+
 }
 
